@@ -1,10 +1,9 @@
-a = int(input("Enter a: "))
-b = int(input("Enter b: "))
+a = int(input("Enter a: "))  # 3
+b = int(input("Enter b: "))  # 3
 
-
-if a > b:
-    print(a)
-elif a < b:
-    print(b)
+if a > b:  # False
+    print(a)  # X
+elif a < b:  # False
+    print(b)  # X
 else:
-    print("equal")
+    print("equal")  # V
