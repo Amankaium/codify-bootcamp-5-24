@@ -56,6 +56,14 @@ while True:
             say_hello(chat_id)
         elif txt.startswith("weather"):  # текст начинается с weather
             send_weather(chat_id, txt)
+        elif txt == "cat":
+            fl = open("cat.jpg", 'rb')
+            url_to_send = f"{BASE_URL}/sendPhoto"
+            params = {
+                "chat_id": chat_id,
+            }
+            files = {"photo": fl}
+            requests.get(url_to_send, params=params, files=files)
 
     answered.append(message_id)
     time.sleep(1)
