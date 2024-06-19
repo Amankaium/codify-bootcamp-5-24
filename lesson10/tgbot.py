@@ -18,6 +18,15 @@ def get_last_message():
     return chat_id, txt, message_id
 
 
+def send_message(chat_id, txt):
+    url_to_send = f"{BASE_URL}/sendMessage"
+    params = {
+        "chat_id": chat_id,
+        "text": txt
+    }
+    requests.get(url_to_send, params=params)
+
+
 def say_hello(chat_id):
     txt_to_say = "hello world"
     url_to_send = f"{BASE_URL}/sendMessage"
@@ -49,7 +58,6 @@ def send_weather(chat_id, txt):
 
 while True:
     chat_id, txt, message_id = get_last_message()
-
     if message_id not in answered:
         print(chat_id)
         if txt == "say hello":
